@@ -13,7 +13,7 @@ const datos= (req,res)=>{
 
 
     const product = [];  
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 5; i++) {
         product.push(new Product(faker.commerce.productName(),faker.commerce.price(),faker.image.cats(200,200,true)))}
     
     

@@ -19,7 +19,7 @@ app.use(express.static('public'))
 
 
 
-app.use("/",productsRouter)
+app.use("/api/products-test",productsRouter)
 app.use("/products",productsRouters)
 
 
