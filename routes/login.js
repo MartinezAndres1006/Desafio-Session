@@ -35,11 +35,21 @@ router.get("/login", (req, res) => {
 });
 
 
-router.post("/", (req, res) => {
-    const { nombre } = req.body.username;
+router.post("/login", (req, res) => {
+    const  {nombre}  = req.body;
     console.log(nombre);
-    req.session.nombre = nombre;
-    res.redirect("/");
+  req.session.nombre = nombre
+    
+    if(!nombre){
+        res.redirect('/login')
+    }else{
+        res.redirect("/products");
+
+    }
+    
+    
+
+
 });
 
 

@@ -7,14 +7,13 @@ const app= express()
 const login = require('./routes/login')
 const productsRouters = require('./routes/products')
 const productsRouter = require('./routes/fakerRoutes')
-
+const homeRouter = require('./routes/home')
 
 
 const port= 8080
 
 
 const path=require('path')
-const { Console } = require('console')
 // config
 // app.engine('handlebars', handlebars.engine())
 app.set('views',path.join(__dirname,'views'))
@@ -31,17 +30,11 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static('views'))
 app.use(express.static('public'))
 app.use("/api/products-test",productsRouter)
-
-
-app.use("/products",(req, res) => {
-    if (req.session.user && req.cookies.user_sid) {
-        res.render(productsRouters)
-    } else {
-        res.redirect('/login')
-        console.log("No has iniciado sesion");
-    }
-})
+app.use("/products",productsRouters)
 app.use('/',login)
+
+
+
 
 
 
