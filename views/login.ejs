@@ -14,13 +14,21 @@
 </script>
 <script src="./app.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
-<title>Desafio ejs</title>
+    <title>Login|Ecommerce</title>
 </head>
-<body class="cuerpo">
-    <%- include('./partials/home.ejs') %> 
-    <%- include('./partials/products.ejs') %>
-    <%- include('./partials/login.ejs') %>
+<body>
+    <div class="contenedor">
 
-    
+
+        <div class="container-fluid d-flex justify-content-center">
+            <section>
+                <form action="">
+                    <h1>Ingresa tu nombre de usuario</h1>
+                    <input type="name" class="form-control" name="username" placeholder="Usuario">
+                    <button type="submit" class="btn btn-primary botoncito" id="addUser" value="Log In">Iniciar sesion</button>
+                </form>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

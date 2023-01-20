@@ -5,9 +5,10 @@
 }
 
 .cuerpo {
-    background-image: url(https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-image: url(https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg);
+    background-repeat: repeat;
+    background-size: 100%; */
+    background-color: aquamarine;
 }
 
 .contenedor {
