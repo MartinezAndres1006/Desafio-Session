@@ -7,11 +7,8 @@ const app= express()
 const login = require('./routes/login')
 const productsRouters = require('./routes/products')
 const productsRouter = require('./routes/fakerRoutes')
-const homeRouter = require('./routes/home')
-
-
 const port= 8080
-
+const session = require('express-session')
 
 const path=require('path')
 // config
@@ -29,7 +26,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('views'))
 app.use(express.static('public'))
-app.use("/api/products-test",productsRouter)
+// app.use("/api/products-test",productsRouter)
 app.use("/products",productsRouters)
 app.use('/',login)
 

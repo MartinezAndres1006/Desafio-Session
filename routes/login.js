@@ -23,11 +23,16 @@ router.use(session({
 }))
 
 
+router.get("/", (req, res) => {
+    if(req.session.nombre){
+        res.render("index.ejs", { nombre: req.session.nombre });
+    }else{
+    console.log("No pudimos cargar el nombre");
+        res.redirect("/login");
+    }
+});
 
-router.get('/',(req,res)=>{
 
-    res.redirect('/login')
-})
 
 
 router.get("/login", (req, res) => {
@@ -36,14 +41,14 @@ router.get("/login", (req, res) => {
 
 
 router.post("/login", (req, res) => {
-    const  {nombre}  = req.body;
+    const  { nombre }  = req.body;
+    module.exports= nombre
     console.log(nombre);
   req.session.nombre = nombre
-    
     if(!nombre){
         res.redirect('/login')
     }else{
-        res.redirect("/products");
+        res.redirect("/");
 
     }
     
@@ -52,6 +57,8 @@ router.post("/login", (req, res) => {
 
 });
 
+
+router.get("/logout")
 
 
 
