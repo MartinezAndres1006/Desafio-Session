@@ -58,8 +58,17 @@ router.post("/login", (req, res) => {
 });
 
 
-router.get("/logout")
-
+router.get("/logout", (req, res) => {
+    const nombre = req.session.nombre;
+    res.render("logout", { nombre });
+    req.session.destroy((err) => {
+    if (!err) { 
+       console.log("Session destruida");
+     } else {
+       res.send({ status: "Error al borrar session" });
+    }
+  });  
+});
 
 
 module.exports=router;

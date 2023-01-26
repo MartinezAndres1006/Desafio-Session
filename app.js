@@ -4,7 +4,7 @@ const app= express()
 
 
 // llamado a rutas
-const login = require('./routes/login')
+const loginLogout = require('./routes/loginLogout')
 const productsRouters = require('./routes/products')
 const productsRouter = require('./routes/fakerRoutes')
 const port= 8080
@@ -28,7 +28,7 @@ app.use(express.static('views'))
 app.use(express.static('public'))
 // app.use("/api/products-test",productsRouter)
 app.use("/products",productsRouters)
-app.use('/',login)
+app.use('/',loginLogout)
 
 
 
